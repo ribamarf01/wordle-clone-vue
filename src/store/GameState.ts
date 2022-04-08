@@ -1,20 +1,35 @@
 import { defineStore } from 'pinia'
-import Guess from '@/@types/Guess'
+import Guess from '../types/Guess'
 
-export const gameStateStore = defineStore('gameState', {
+export const useGameStateStore = defineStore('gameState', {
   state: () => ({
     word: '',
-    guesses: [] as Guess[]
+    guesses: [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+    ] as Guess[] | any[],
+    actualTry: 0
   }),
   actions: {
     resetGame(): void {
       this.word = '',
-        this.guesses = [] as Guess[]
+      this.guesses = [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ] as Guess[] | any[]
     },
-    newWord(newWord: string): void {
+    newGuess(newWord: string): void {
       // 0 - Não esta na palavra
       let hint = [..."00000"]
-      let formatedword = [...newWord]
+      let formatedword = [...newWord.toUpperCase()]
       // 1 - Esta na palavra, mas em outra posição
       for (let i = 0; i < 5; i++) {
         if (this.word.includes(formatedword[i])) {
@@ -29,8 +44,10 @@ export const gameStateStore = defineStore('gameState', {
       }
 
       const guess: Guess = new Guess(newWord, hint)
-      this.guesses.push(guess)
-      
+      this.guesses[this.actualTry] = guess
+      this.actualTry++
+
+      console.log(this.guesses, this.actualTry)
     }
   },
   getters: {
