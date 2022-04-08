@@ -7,12 +7,12 @@ export const useGameStateStore = defineStore('gameState', {
   state: () => ({
     word: "PLANE",
     guesses: [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
     ] as Guess[] | any[],
     actualTry: 0,
     gameOver: false,
@@ -36,9 +36,9 @@ export const useGameStateStore = defineStore('gameState', {
 
       // Game handle
       // 0 - Não esta na palavra
-      if(!this.gameOver) {
+      if (!this.gameOver) {
 
-        if(newWord === this.word) {
+        if (newWord.toUpperCase() === this.word) {
           this.gameOver = true
           this.win = true
         }
@@ -55,7 +55,7 @@ export const useGameStateStore = defineStore('gameState', {
 
         // 2 - Esta na palavra na posição correta
         for (let i = 0; i < 5; i++) {
-            if (this.word[i] === formatedword[i]) {
+          if (this.word[i] === formatedword[i]) {
             hint[i] = "2"
           }
         }
@@ -66,8 +66,8 @@ export const useGameStateStore = defineStore('gameState', {
       }
 
       // Handle gameover
-      if(this.actualTry === 6) this.gameOver = true
-    
+      if (this.actualTry === 6) this.gameOver = true
+
     }
   },
   getters: {
