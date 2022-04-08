@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col">
+    <span class="text-white text-center text-3xl mb-7" :class="game.gameOver ? 'visible': 'invisible'">The word was: {{ game.word }}</span>
     <div class="text-white font-bold text-3xl my-1" v-for="({ guess, hint }) in game.getGuesses" :key="guess">
       <div v-if="guess" class="flex flex-row">
         <div class="mx-1 border w-16 h-16 flex justify-center items-center" :class="defineBgColor(hint[0])">
@@ -42,7 +43,7 @@
       <input class="text-center my-3 p-3 rounded-full bg-gray-400 placeholder-gray-700 text-lg w-full outline-none" type="text" maxlength="5" minlength="5" placeholder="Your guess" v-model="word">
       <div class="flex w-full justify-center">
         
-        <a href="#" @click.prevent="resetGame" class="bg-gray-400 text-lg font-bold w-1/3 p-2 rounded-full text-center mx-3">Retry</a>
+        <a href="#" @click.prevent="resetGame" class="bg-gray-400 text-lg font-bold w-1/3 p-2 rounded-full text-center mx-3" :class="game.gameOver ? 'visible': 'invisible' ">Retry</a>
       </div>
     </form>
   </div>
