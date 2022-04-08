@@ -1,16 +1,45 @@
-# Vue 3 + Typescript + Vite
+# Wordle clone on VueJS!
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 👀 Project Overview
 
-## Recommended IDE Setup
+- 😎 Another Wordle clone, the most cloned game of the moment!
+- 👨‍💻 The main core of the game state and logic is in the store created by Vue Pinia 🍍. Check how it works [here](https://github.com/ribamarf01/wordle-clone-vue/blob/main/src/store/GameState.ts).
+- 🔗 You can find this project live on: https://wordle-clone-vue.vercel.app.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 🔥 Techs used
 
-## Type Support For `.vue` Imports in TS
+<div style="
+    display: inline-block
+">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" height="40" width="40" alt="VueJS icon" />
+    <img src="https://vitejs.dev/logo.svg" height="40" width="40" alt="Vite icon" />
+    <img src="https://pinia.vuejs.org/logo.svg" height="40" width="40" alt="Pinia icon" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" width="40" alt="TypeScript icon"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" height="40" width="40" alt="TailwindCSS icon" />
+</div>
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+## 🔧 Build Setup
 
-1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```bash
+# install dependencies
+$ npm install
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production
+$ npm run build
+
+You can also use yarn!
+```
+
+## 📷 Project images
+
+<img src="./github/images/img1.png" alt="project image 1">
+<img src="./github/images/gif2.gif" alt="project gif 2">
+<img src="./github/images/gif1.gif" alt="project gif 1">
+
+## 👽 External links
+
+- 🔗 Original Wordle: https://www.nytimes.com/games/wordle/index.html
+- 🔗 Here Lies Wordle: 2021–2027 (Full Answer List) (Sorry...): https://medium.com/@owenyin/here-lies-wordle-2021-2027-full-answer-list-52017ee99e86

@@ -31,6 +31,7 @@ export const useGameStateStore = defineStore('gameState', {
       ] as Guess[] | any[]
       this.actualTry = 0
       this.gameOver = false
+      this.win = false
     },
     newGuess(newWord: string): void {
 
@@ -53,7 +54,7 @@ export const useGameStateStore = defineStore('gameState', {
           }
         }
 
-        // 2 - Esta na palavra na posição correta
+        // 2 - Esta na palavra e na posição correta
         for (let i = 0; i < 5; i++) {
           if (this.word[i] === formatedword[i]) {
             hint[i] = "2"
