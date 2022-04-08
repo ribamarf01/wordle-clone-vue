@@ -40,7 +40,10 @@
 
     <form @submit.prevent="submitTry" class="w-full flex flex-col items-center">
       <input class="text-center my-3 p-3 rounded-full bg-gray-400 placeholder-gray-700 text-lg w-full outline-none" type="text" maxlength="5" minlength="5" placeholder="Your guess" v-model="word">
-      <button class="bg-gray-400 text-lg font-bold w-1/3 p-2 rounded-full border-4 border-transparent hover:border-green-600 duration-300 transition-all" type="submit">Try!</button>
+      <div class="flex w-full justify-center">
+        
+        <a href="#" @click.prevent="resetGame" class="bg-gray-400 text-lg font-bold w-1/3 p-2 rounded-full text-center mx-3">Retry</a>
+      </div>
     </form>
   </div>
 </template>
@@ -55,6 +58,10 @@ const word = ref("")
 const submitTry = () => {
   game.newGuess(word.value)
   word.value = ""
+}
+
+const resetGame = () => {
+  game.resetGame()
 }
 
 const defineBgColor = (hint: string): string => {

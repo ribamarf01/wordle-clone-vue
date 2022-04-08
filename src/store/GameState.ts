@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
+
 import Guess from '../types/Guess'
+import getRandomWord from '../utils/getRandomWord'
 
 export const useGameStateStore = defineStore('gameState', {
   state: () => ({
@@ -16,7 +18,7 @@ export const useGameStateStore = defineStore('gameState', {
   }),
   actions: {
     resetGame(): void {
-      this.word = '',
+      this.word = getRandomWord()
       this.guesses = [
         {},
         {},
@@ -25,6 +27,7 @@ export const useGameStateStore = defineStore('gameState', {
         {},
         {}
       ] as Guess[] | any[]
+      this.actualTry = 0
     },
     newGuess(newWord: string): void {
       // 0 - Não esta na palavra
