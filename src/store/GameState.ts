@@ -5,7 +5,7 @@ import getRandomWord from '../utils/getRandomWord'
 
 export const useGameStateStore = defineStore('gameState', {
   state: () => ({
-    word: getRandomWord(),
+    word: "PLANE",
     guesses: [
         {},
         {},
