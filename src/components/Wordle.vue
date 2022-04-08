@@ -1,6 +1,8 @@
 <template>
-  <div class="flex flex-col">
-    <span class="text-white text-center text-3xl mb-7" :class="game.gameOver ? 'visible': 'invisible'">The word was: {{ game.word }}</span>
+  <div class="flex flex-col items-center">
+    <span class="text-white text-center text-3xl mb-3" :class="game.gameOver ? 'visible': 'invisible'">
+      {{ game.win ? "You win 👑" : "" }} The word was: {{ game.word }}
+    </span>
     <div class="text-white font-bold text-3xl my-1" v-for="({ guess, hint }) in game.getGuesses" :key="guess">
       <div v-if="guess" class="flex flex-row">
         <div class="mx-1 border w-16 h-16 flex justify-center items-center" :class="defineBgColor(hint[0])">

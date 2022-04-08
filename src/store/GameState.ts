@@ -15,7 +15,8 @@ export const useGameStateStore = defineStore('gameState', {
         {}
     ] as Guess[] | any[],
     actualTry: 0,
-    gameOver: false
+    gameOver: false,
+    win: false
   }),
   actions: {
     resetGame(): void {
@@ -36,6 +37,12 @@ export const useGameStateStore = defineStore('gameState', {
       // Game handle
       // 0 - Não esta na palavra
       if(!this.gameOver) {
+
+        if(newWord === this.word) {
+          this.gameOver = true
+          this.win = true
+        }
+
         let hint = [..."00000"]
         let formatedword = [...newWord.toUpperCase()]
 
