@@ -4,7 +4,7 @@
 
 - 😎 Another Wordle clone, the most cloned game of the moment!
 - 👨‍💻 The main core of the game state and logic is in the store created by Vue Pinia 🍍. Check how it works [here](https://github.com/ribamarf01/wordle-clone-vue/blob/main/src/store/GameState.ts).
-- 🔗 You can find this project live on: https://wordle-clone-vue.vercel.app.
+- 🔗 You can find this project live on: https://wordle-clone.ribamarf01.dev/.
 
 ## 🔥 Techs used
 
